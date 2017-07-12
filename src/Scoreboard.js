@@ -73,14 +73,6 @@ return timeFormatted;
     return (
       <div className="App">
 <div className="container">
-<div className="row timer text-center">
-  {this.state.isPaused ?
-<h2 className="timer off">{this.formatTime(this.state.SecondsRemaining)}</h2>
-:
-<h2 className="timer on">{this.formatTime(this.state.SecondsRemaining)}</h2>
-}
-</div>
-
 <div className="row">
 <div className="PlayerOne col-lg-6 col-xs-6">
 <h1>{this.state.playerOnePoints}</h1>
@@ -92,10 +84,33 @@ return timeFormatted;
 <h2 className="penalty">{this.state.playerOnePenalties}</h2>
 </div>
 </div>
+</div>
+<div className="PlayerTwo col-lg-6 col-xs-6">
+<h1>{this.state.playerTwoPoints}</h1>
+  <div className="row adv-pen">
+  <div className="col-xs-6 col-lg-6">
+  <h2 className="advantage">{this.state.playerTwoAdvantages}</h2>
+  </div>
+  <div className="col-xs-6 col-lg-6">
+  <h2 className="penalty">{this.state.playerTwoPenalties}</h2>
+  </div>
+  </div>
+</div>
+</div>
+<div className="row timer text-center">
+  {this.state.isPaused ?
+<h2 className="timer off">{this.formatTime(this.state.SecondsRemaining)}</h2>
+:
+<h2 className="timer on">{this.formatTime(this.state.SecondsRemaining)}</h2>
+}
+</div>
 
-<div className="row player1buttons">
 
-  <div className="col-xs-12 col-lg-6">
+<div className="row text-center buttons">
+
+  <div className="player1buttons col-xs-6 col-lg-6">
+    <div className="row">
+      <div className="col-xs-6 col-lg-6">
     <h4>Points</h4>
     <div className="row">
   <button onClick={() => {this.setState({playerOnePoints: this.state.playerOnePoints + 2})}} className="btn points">+2</button>
@@ -107,34 +122,23 @@ return timeFormatted;
     <button onClick={() => {this.setState({playerOnePoints: this.state.playerOnePoints - 3})}} className="btn points">-3</button>
     <button onClick={() => {this.setState({playerOnePoints: this.state.playerOnePoints - 4})}} className="btn points">-4</button>
   </div>
-  </div>
+</div>
   <div className="col-xs-6 col-lg-3 text-center">
     <h4>Adv</h4>
-    <button onClick={() => {this.setState({playerOneAdvantages: this.state.playerOneAdvantages + 1})}} className="btn"><span className="glyphicon glyphicon-plus"></span></button>
-    <button onClick={() => {this.setState({playerOneAdvantages: this.state.playerOneAdvantages - 1})}} className="btn"><span className="glyphicon glyphicon-minus"></span></button>
+    <div className="row"><button onClick={() => {this.setState({playerOneAdvantages: this.state.playerOneAdvantages + 1})}} className="btn"><span className="glyphicon glyphicon-plus"></span></button></div>
+    <div className="row"><button onClick={() => {this.setState({playerOneAdvantages: this.state.playerOneAdvantages - 1})}} className="btn"><span className="glyphicon glyphicon-minus"></span></button></div>
   </div>
   <div className="col-xs-6 col-lg-3 text-center">
     <h4>Pen</h4>
-      <button className="btn" onClick={this.addPlayerOnePenalty.bind(this)}><span className="glyphicon glyphicon-plus"></span></button>
-      <button className="btn"><span className="glyphicon glyphicon-minus"></span></button>
+      <div className="row"><button className="btn" onClick={this.addPlayerOnePenalty.bind(this)}><span className="glyphicon glyphicon-plus"></span></button></div>
+      <div className="row"><button className="btn"><span className="glyphicon glyphicon-minus"></span></button></div>
   </div>
-
 </div>
 </div>
 
-<div className="PlayerTwo col-lg-6 col-xs-6">
-<h1>{this.state.playerTwoPoints}</h1>
-  <div className="row adv-pen">
-  <div className="col-xs-6 col-lg-6">
-  <h2 className="advantage">{this.state.playerTwoAdvantages}</h2>
-  </div>
-  <div className="col-xs-6 col-lg-6">
-  <h2 className="penalty">{this.state.playerTwoPenalties}</h2>
-  </div>
-  </div>
-
-  <div className="row player2buttons">
-  <div className="col-xs-12 col-lg-6">
+<div className="player2buttons col-xs-6 col-lg-6">
+  <div className="row">
+  <div className="col-xs-6 text-center col-lg-6">
     <h4>Points</h4>
     <div className="row">
   <button onClick={() => {this.setState({playerTwoPoints: this.state.playerTwoPoints + 2})}} className="btn points">+2</button>
@@ -147,20 +151,19 @@ return timeFormatted;
     <button onClick={() => {this.setState({playerTwoPoints: this.state.playerTwoPoints - 4})}} className="btn points">-4</button>
   </div>
   </div>
-  <div className="col-xs-6 col-lg-3 text-center">
-    <h4>Adv</h4>
-    <button onClick={() => {this.setState({playerTwoAdvantages: this.state.playerTwoAdvantages + 1})}} className="btn"><span className="glyphicon glyphicon-plus"></span></button>
-    <button onClick={() => {this.setState({playerTwoAdvantages: this.state.playerTwoAdvantages - 1})}} className="btn"><span className="glyphicon glyphicon-minus"></span></button>
-  </div>
-  <div className="col-xs-6 col-lg-3 text-center">
-    <h4>Pen</h4>
-      <button className="btn"><span className="glyphicon glyphicon-plus"></span></button>
-      <button className="btn"><span className="glyphicon glyphicon-minus"></span></button>
-  </div>
+    <div className="col-xs-6 col-lg-3 text-center">
+      <h4>Adv</h4>
+      <button onClick={() => {this.setState({playerTwoAdvantages: this.state.playerTwoAdvantages + 1})}} className="btn"><span className="glyphicon glyphicon-plus"></span></button>
+      <button onClick={() => {this.setState({playerTwoAdvantages: this.state.playerTwoAdvantages - 1})}} className="btn"><span className="glyphicon glyphicon-minus"></span></button>
+    </div>
+    <div className="col-xs-6 col-lg-3 text-center">
+      <h4>Pen</h4>
+        <button className="btn"><span className="glyphicon glyphicon-plus"></span></button>
+        <button className="btn"><span className="glyphicon glyphicon-minus"></span></button>
+    </div>
 </div>
 </div>
 </div>
-
 <div className="row main-controls text-center">
 <button className="btn" onClick={() => {this.setState({SecondsRemaining: this.state.SecondsRemaining + 60 })}}><span className="glyphicon glyphicon-plus"></span></button>
 <button className="btn" onClick={() => {
@@ -179,7 +182,7 @@ return timeFormatted;
     }}>Reset Timer</button>
 </div>
 </div>
-      </div>
+</div>
     );
   }
 }

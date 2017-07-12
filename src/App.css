@@ -1,3 +1,21 @@
+@media only screen and (max-width: 768px) {
+h1 {
+  font-size: 200px;
+}
+h2 {
+  font-size: 75px;
+}
+ }
+
+
+ h1 {
+   font-size: 35vh;
+ }
+ h2 {
+   font-size: 15vh;
+ }
+
+
 .PlayerOne, .PlayerTwo {
   text-align: center;
 }
@@ -13,19 +31,21 @@ body {
   background: #151515;
 }
 
-h1 {
-  font-size: 200px;
-}
-h2 {
-  font-size: 75px;
-}
 
 .timer {
   font-size: 50px;
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
 
 .PlayerOne {
   border-right: 1px solid #f5f5f5;
+}
+.player1buttons {
+  border-right: 1px solid #f5f5f5;
+}
+.player2buttons {
+  border-left: 1px solid #f5f5f5;
 }
 
 .PlayerTwo {
