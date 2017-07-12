@@ -1,0 +1,75 @@
+.PlayerOne, .PlayerTwo {
+  text-align: center;
+}
+
+.container {
+  border-left: 1px solid #f5f5f5;
+  border-right: 1px solid #f5f5f5;
+  border-bottom-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+  background: white;
+}
+body {
+  background: #151515;
+}
+
+h1 {
+  font-size: 200px;
+}
+h2 {
+  font-size: 75px;
+}
+
+.timer {
+  font-size: 50px;
+}
+
+.PlayerOne {
+  border-right: 1px solid #f5f5f5;
+}
+
+.PlayerTwo {
+  border-left: 1px solid #f5f5f5;
+}
+.points {
+  font-size: 20px;
+}
+.advantage {
+  color: green;
+}
+.penalty {
+  color: red;
+}
+
+.adv-pen {
+  text-align: center;
+}
+.btn {
+  font-weight: 900;
+}
+
+.main-controls {
+  margin-top: 50px;
+  margin-bottom: 25px;
+}
+
+.timer {
+  background: #f5f5f5;
+  font-size: 80px;
+  margin: 0 auto;
+  padding:5px;
+  width: auto;
+}
+.on {
+  background: green;
+  transition: 0.2s;
+  color: white;
+}
+.off {
+  background: none;
+  transition: 0.2s;
+}
+
+.btn {
+  margin: 5px;
+}
