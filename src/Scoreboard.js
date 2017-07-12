@@ -153,13 +153,13 @@ return timeFormatted;
   </div>
     <div className="col-xs-6 col-lg-3 text-center">
       <h4>Adv</h4>
-      <button onClick={() => {this.setState({playerTwoAdvantages: this.state.playerTwoAdvantages + 1})}} className="btn"><span className="glyphicon glyphicon-plus"></span></button>
-      <button onClick={() => {this.setState({playerTwoAdvantages: this.state.playerTwoAdvantages - 1})}} className="btn"><span className="glyphicon glyphicon-minus"></span></button>
+      <div className="row"><button onClick={() => {this.setState({playerTwoAdvantages: this.state.playerTwoAdvantages + 1})}} className="btn"><span className="glyphicon glyphicon-plus"></span></button></div>
+      <div className="row"><button onClick={() => {this.setState({playerTwoAdvantages: this.state.playerTwoAdvantages - 1})}} className="btn"><span className="glyphicon glyphicon-minus"></span></button></div>
     </div>
     <div className="col-xs-6 col-lg-3 text-center">
       <h4>Pen</h4>
-        <button className="btn"><span className="glyphicon glyphicon-plus"></span></button>
-        <button className="btn"><span className="glyphicon glyphicon-minus"></span></button>
+        <div className="row"><button className="btn"><span className="glyphicon glyphicon-plus"></span></button></div>
+        <div className="row"><button className="btn"><span className="glyphicon glyphicon-minus"></span></button></div>
     </div>
 </div>
 </div>
