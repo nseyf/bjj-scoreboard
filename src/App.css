@@ -12,7 +12,10 @@ h2 {
    font-size: 35vh;
  }
  h2 {
-   font-size: 15vh;
+   font-size: 10vh;
+ }
+ h4 {
+   font-weight: 100;
  }
 
 
@@ -32,7 +35,7 @@ body {
 }
 
 .timer {
-  font-size: 50px;
+  font-size: 60px;
   margin-top: 5px;
   margin-bottom: 5px;
 }
@@ -65,6 +68,10 @@ body {
 }
 .btn {
   font-weight: 900;
+}
+
+.timecontrol {
+margin: 0
 }
 
 .main-controls {

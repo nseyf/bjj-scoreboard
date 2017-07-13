@@ -197,6 +197,7 @@ return timeFormatted;
         playerTwoPoints: 0,
         playerTwoAdvantages: 0,
         playerTwoPenalties: 0,
+        SecondsRemaining: 300
       })
     }}>Reset Match</button>
 </div>
