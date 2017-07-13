@@ -22,18 +22,27 @@ this.handleTimer = this.handleTimer.bind(this);
 
 
 addPlayerOnePenalty(e) {
-
-/*
 this.setState({
-  playerOne: {
-   penalties: this.state.playerOne.penalties + 1
+  playerOnePenalties: this.state.playerOnePenalties + 1
+}, () => {
+  if(this.state.playerOnePenalties === 2) {
+    this.setState({playerTwoAdvantages: this.state.playerTwoAdvantages + 1})
+  } else if (this.state.playerOnePenalties === 3) {
+    this.setState({playerTwoPoints: this.state.playerTwoPoints + 2})
   }
 })
-*/
 }
 
 addPlayerTwoPenalty(e) {
-
+  this.setState({
+    playerTwoPenalties: this.state.playerTwoPenalties + 1
+  }, () => {
+    if(this.state.playerTwoPenalties === 2) {
+      this.setState({playerOneAdvantages: this.state.playerOneAdvantages + 1})
+    } else if (this.state.playerTwoPenalties === 3) {
+      this.setState({playerOnePoints: this.state.playerOnePoints + 2})
+    }
+  })
 }
 
 /* BJJ Rules
@@ -131,7 +140,7 @@ return timeFormatted;
   <div className="col-xs-6 col-lg-3 text-center">
     <h4>Pen</h4>
       <div className="row"><button className="btn" onClick={this.addPlayerOnePenalty.bind(this)}><span className="glyphicon glyphicon-plus"></span></button></div>
-      <div className="row"><button className="btn"><span className="glyphicon glyphicon-minus"></span></button></div>
+      <div className="row"><button className="btn" onClick={() => {this.setState({playerOnePenalties: this.state.playerOnePenalties - 1 })}}><span className="glyphicon glyphicon-minus"></span></button></div>
   </div>
 </div>
 </div>
@@ -158,8 +167,8 @@ return timeFormatted;
     </div>
     <div className="col-xs-6 col-lg-3 text-center">
       <h4>Pen</h4>
-        <div className="row"><button className="btn"><span className="glyphicon glyphicon-plus"></span></button></div>
-        <div className="row"><button className="btn"><span className="glyphicon glyphicon-minus"></span></button></div>
+        <div className="row"><button className="btn" onClick={this.addPlayerTwoPenalty.bind(this)}><span className="glyphicon glyphicon-plus"></span></button></div>
+        <div className="row"><button className="btn" onClick={() => {this.setState({playerTwoPenalties: this.state.playerTwoPenalties - 1})}}><span className="glyphicon glyphicon-minus"></span></button></div>
     </div>
 </div>
 </div>
@@ -180,6 +189,16 @@ return timeFormatted;
   <button className="btn" onClick={() => {
       this.setState({SecondsRemaining: 300})
     }}>Reset Timer</button>
+  <button className="btn" onClick={() => {
+      this.setState({
+        playerOnePoints: 0,
+        playerOneAdvantages: 0,
+        playerOnePenalties: 0,
+        playerTwoPoints: 0,
+        playerTwoAdvantages: 0,
+        playerTwoPenalties: 0,
+      })
+    }}>Reset Match</button>
 </div>
 </div>
 </div>
