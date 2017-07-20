@@ -1,5 +1,7 @@
 ## BJJ Scoreboard
 
+[View Live](https://nseyf.github.io/bjj-scoreboard)
+
 Scoreboard for use in Brazilian Jiu-Jitsu competitions.
 
 Allows users to set match duration as well as allocate points, penalties and advantages.
